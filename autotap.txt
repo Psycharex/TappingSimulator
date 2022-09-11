@@ -1,0 +1,84 @@
+local GetTappin = Instance.new("ScreenGui")
+local credits = Instance.new("TextLabel")
+
+GetTappin.Name = "GetTappin"
+GetTappin.Parent = game.CoreGui
+
+credits.Name = "credits"
+credits.Parent = GetTappin
+credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+credits.BackgroundTransparency = 1.000
+credits.BorderSizePixel = 0
+credits.Position = UDim2.new(0.393362522, 0, 0.922839522, 0)
+credits.Size = UDim2.new(0, 350, 0, 50)
+credits.Font = Enum.Font.Cartoon
+credits.Text = "Made by UbiquitousGaming#9383"
+credits.TextColor3 = Color3.fromRGB(7, 255, 23)
+credits.TextSize = 20.000
+credits.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+credits.TextWrapped = true
+
+-- Scripts:
+
+local function NSUV_fake_script() -- credits.rainbow 
+	local script = Instance.new('LocalScript', credits)
+
+	local text = script.Parent
+	local add = 10
+	wait(1)
+	local k = 1
+	while k <= 255 do
+		text.TextColor3 = Color3.new(k/255,0/255,0/255)
+		k = k + add
+		wait()
+	end
+	while true do
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255,k/255,0/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(0/255,255/255,k/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(k/255,0/255,255/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
+			k = k + add
+			wait()
+		end
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
+			k = k + add
+			wait()
+		end
+	end
+end
+coroutine.wrap(NSUV_fake_script)()
+
+while true do
+	wait()
+	game:GetService("ReplicatedStorage").Events.Tap:FireServer()
+end
